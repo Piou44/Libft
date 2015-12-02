@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-unsigned int			count_n(unsigned int n)
+static unsigned int			count_n(unsigned int n)
 {
 	unsigned int		i;
 
@@ -25,7 +25,7 @@ unsigned int			count_n(unsigned int n)
 	return (i);
 }
 
-char					*n_negative(int n)
+static char					*n_negative(int n)
 {
 	char				*res;
 	int					i;

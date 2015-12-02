@@ -22,13 +22,13 @@ char	*ft_strtrim(char const *s)
 	i = 0;
 	j = 0;
 	end = ft_strlen(s) - 1;
-	while (s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
+	while (ft_isblank((int)s[i]) == 1)
 	{
 		i++;
 		if (s[i] == '\0')
-			return (swb = "");
+			return (((char*)s) + i);
 	}
-	while (s[end] == ' ' || s[end] == '\t' || s[end] == '\n')
+	while (ft_isblank((int)s[end]) == 1)
 		end--;
 	swb = ft_memalloc(sizeof(char*) * (end - i + 1));
 	while (i <= end)
