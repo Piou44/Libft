@@ -6,12 +6,11 @@
 /*   By: fhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 15:19:31 by fhuang            #+#    #+#             */
-/*   Updated: 2015/12/01 21:41:06 by fhuang           ###   ########.fr       */
+/*   Updated: 2015/12/02 16:23:32 by fhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strstr(const char *s1, const char *s2)
 {
@@ -23,7 +22,7 @@ char	*ft_strstr(const char *s1, const char *s2)
 	tmp = 0;
 	if (s2[i] == '\0')
 		return ((char*)s1);
-	while(s1[i])
+	while (s1[i])
 	{
 		j = 0;
 		while (s1[i] && s1[i] != s2[j])
@@ -32,7 +31,7 @@ char	*ft_strstr(const char *s1, const char *s2)
 		while (s2[j] && s1[i++] == s2[j])
 			j++;
 		if (s2[j] == '\0')
-				return ((char*)s1 + tmp);
+			return ((char*)s1 + tmp);
 		else if (s1[i])
 			i = tmp + 1;
 	}

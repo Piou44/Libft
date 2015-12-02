@@ -6,7 +6,7 @@
 /*   By: fhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 10:53:44 by fhuang            #+#    #+#             */
-/*   Updated: 2015/11/30 11:08:38 by fhuang           ###   ########.fr       */
+/*   Updated: 2015/12/02 16:15:52 by fhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int		ft_atoi(const char *str)
 	while (ft_isspace(str[i]))
 		i++;
 	if (str[i] == '-')
-			negatif = -1;
+		negatif = -1;
 	if (str[i] == '-' || str[i] == '+')
 		i++;
 	while (ft_isdigit((int)str[i]))

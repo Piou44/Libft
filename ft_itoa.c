@@ -6,13 +6,13 @@
 /*   By: fhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 12:47:57 by fhuang            #+#    #+#             */
-/*   Updated: 2015/12/01 17:51:33 by fhuang           ###   ########.fr       */
+/*   Updated: 2015/12/02 16:24:22 by fhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int		count_n(unsigned int n)
+unsigned int			count_n(unsigned int n)
 {
 	unsigned int		i;
 
@@ -25,7 +25,7 @@ unsigned int		count_n(unsigned int n)
 	return (i);
 }
 
-char	*n_negative(int n)
+char					*n_negative(int n)
 {
 	char				*res;
 	int					i;
@@ -40,7 +40,7 @@ char	*n_negative(int n)
 	res[i + 1] = '\0';
 	while (n_cast >= 10)
 	{
-		tmp =  n_cast % 10;
+		tmp = n_cast % 10;
 		res[i] = tmp + '0';
 		i--;
 		n_cast /= 10;
@@ -49,12 +49,12 @@ char	*n_negative(int n)
 	return (res);
 }
 
-char	*ft_itoa(int n)
+char					*ft_itoa(int n)
 {
-	char	*res;
-	int		tmp;
-	int		i;
-	
+	char				*res;
+	int					tmp;
+	int					i;
+
 	i = 0;
 	tmp = 0;
 	if (n < 0)
