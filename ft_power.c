@@ -1,31 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_power.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 11:59:58 by fhuang            #+#    #+#             */
-/*   Updated: 2015/12/03 10:41:21 by fhuang           ###   ########.fr       */
+/*   Created: 2015/12/03 19:05:16 by fhuang            #+#    #+#             */
+/*   Updated: 2015/12/03 19:17:04 by fhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+int		ft_power(int nb, int power)
 {
-	char	*dest;
 	int		i;
+	int		res;
 
 	i = 0;
-	dest = (char*)malloc(sizeof(char) * (ft_strlen(s1) + 1));
-	if (dest == NULL)
-		return (NULL);
-	while (s1[i])
+	res = nb;
+	if (power == 0)
+		return (1);
+	else if (nb == 0)
+		return (0);
+	else if (power < 0)
 	{
-		dest[i] = s1[i];
+		ft_putchar('-');
+		power *= -1;
+	}
+	while (i < power)
+	{
+		res *= nb;  printf("res = %i\n", res);
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (res);
+}
+
+int		main()
+{
+	printf("%i\n", ft_power(2 ,3));
+	return 0;
 }
