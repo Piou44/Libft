@@ -5,7 +5,7 @@ void	ft_lstaddend(t_list **alst, t_list *new)
 	t_list	*ptr;
 
 	ptr = *alst;
-	if (*alst = NULL)
+	if (*alst == NULL)
 		*alst = new;
 	else
 	{

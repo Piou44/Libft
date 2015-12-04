@@ -22,5 +22,5 @@ unsigned int		ft_power_pos(unsigned int n, unsigned int p)
 		return (n);
 	else if (p % 2 == 0)
 		return (ft_power_pos(n * n, p / 2));
-	return (n * ft_power_pow(n * n, (p - 1) / 2));
+	return (n * ft_power_pos(n * n, (p - 1) / 2));
 }

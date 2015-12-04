@@ -18,9 +18,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		i;
 	int		j;
 
-	sfinal = (char*)malloc(sizeof(char*) * (strlen(s1) + strlen(s2) + 1));
-	if (sfinal == NULL)
-		return (NULL);
+	sfinal = (char*)ft_memalloc(sizeof(char) * (ft_strlen(s1)
+		+ ft_strlen(s2) + 1));
 	i = 0;
 	while (s1[i])
 	{

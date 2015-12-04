@@ -17,9 +17,7 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	char		*fresh_s;
 	int			i;
 
-	fresh_s = (char*)malloc(sizeof(char*) * (strlen(s) + 1));
-	if (fresh_s == NULL)
-		return (NULL);
+	fresh_s = (char*)ft_memalloc((sizeof(char) * (ft_strlen(s) + 1)));
 	i = 0;
 	while (s[i])
 	{
