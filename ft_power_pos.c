@@ -12,32 +12,15 @@
 
 #include "libft.h"
 
-int		ft_power(int nb, int power)
+unsigned int		ft_power_pos(unsigned int n, unsigned int p)
 {
-	int		i;
-	int		res;
-
-	i = 0;
-	res = nb;
-	if (power == 0)
-		return (1);
-	else if (nb == 0)
+	if (n == 0)
 		return (0);
-	else if (power < 0)
-	{
-		ft_putchar('-');
-		power *= -1;
-	}
-	while (i < power)
-	{
-		res *= nb;  printf("res = %i\n", res);
-		i++;
-	}
-	return (res);
-}
-
-int		main()
-{
-	printf("%i\n", ft_power(2 ,3));
-	return 0;
+	else if (p == 0)
+		return (1);
+	else if (p == 1)
+		return (n);
+	else if (p % 2 == 0)
+		return (ft_power_pos(n * n, p / 2));
+	return (n * ft_power_pow(n * n, (p - 1) / 2));
 }

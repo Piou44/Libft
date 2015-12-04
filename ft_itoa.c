@@ -33,7 +33,7 @@ static char					*n_negative(int n)
 	unsigned int		n_cast;
 
 	n_cast = (unsigned int)-n;
-	res = ft_memalloc(sizeof(char*) * count_n(n_cast) + 2);
+	res = ft_memalloc(sizeof(char) * count_n(n_cast) + 2);
 	tmp = 0;
 	res[0] = '-';
 	i = count_n(n_cast);
@@ -61,7 +61,7 @@ char					*ft_itoa(int n)
 		res = n_negative(n);
 	else
 	{
-		res = ft_memalloc(sizeof(char*) * (count_n(n) + 1));
+		res = ft_memalloc(sizeof(char) * (count_n(n) + 1));
 		i = (count_n(n) - 1);
 		res[i] = '\0';
 		while (n >= 10)

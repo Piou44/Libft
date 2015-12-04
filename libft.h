@@ -14,7 +14,6 @@
 # define 	LIBFT_H
 
 #include <unistd.h>
-#include <string.h>
 #include <stdlib.h>
 
 typedef struct s_list
@@ -26,13 +25,16 @@ typedef struct s_list
 
 t_list	*ft_lstnew(void const *content, size_t content_size);
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+int	ft_lstlen(t_list *list);
 void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void	ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void	ft_lstadd(t_list **alst, t_list *new);
+void	ft_lstaddend(t_list **alst, t_list *new);
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void	ft_putchar(char c);
 void	ft_putstr(char const *s);
 void	ft_putendl(char const *s);
+void	ft_putnbrendl(int n);
 void	ft_putnbr(int n);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char const *s, int fd);
@@ -67,10 +69,11 @@ char	*ft_strmap(char const *s, char (*f)(char));
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int	ft_atoi(const char *str);
 char	*ft_itoa(int n);
+unsigned int	ft_power_pos(unsigned int n, unsigned int p);
 int	ft_isalpha(int c);
 int	ft_isdigit(int c);
 int	ft_isalnum(int c);
-int	ft_isblank(int c);
+int	ft_isspace(int c);
 int	ft_isascii(int c);
 int	ft_isprint(int c);
 int	ft_toupper(int c);

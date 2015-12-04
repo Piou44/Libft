@@ -12,6 +12,11 @@
 
 #include "libft.h"
 
+int	ft_space(int c)
+{
+	return (c == ' ' || c == '\t' || c == '\n');
+}
+
 char	*ft_strtrim(char const *s)
 {
 	char	*swb;
@@ -22,15 +27,15 @@ char	*ft_strtrim(char const *s)
 	i = 0;
 	j = 0;
 	end = ft_strlen(s) - 1;
-	while (ft_isblank((int)s[i]) == 1)
+	while (ft_space((int)s[i]) == 1)
 	{
 		i++;
 		if (s[i] == '\0')
 			return (((char*)s) + i);
 	}
-	while (ft_isblank((int)s[end]) == 1)
+	while (ft_space((int)s[end]) == 1)
 		end--;
-	swb = ft_memalloc(sizeof(char*) * (end - i + 1));
+	swb = ft_memalloc(sizeof(char) * (end - i + 1));
 	while (i <= end)
 	{
 		swb[j] = s[i];
