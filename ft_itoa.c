@@ -6,7 +6,7 @@
 /*   By: fhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 12:47:57 by fhuang            #+#    #+#             */
-/*   Updated: 2015/12/02 16:24:22 by fhuang           ###   ########.fr       */
+/*   Updated: 2015/12/04 11:34:14 by fhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static char					*n_negative(int n)
 	return (res);
 }
 
-char					*ft_itoa(int n)
+char						*ft_itoa(int n)
 {
 	char				*res;
 	int					tmp;

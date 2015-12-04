@@ -6,7 +6,7 @@
 /*   By: fhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 19:20:03 by fhuang            #+#    #+#             */
-/*   Updated: 2015/12/02 19:21:55 by fhuang           ###   ########.fr       */
+/*   Updated: 2015/12/04 11:31:49 by fhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static int	count_char(char *s, char c)
 	return (n);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char		**ft_strsplit(char const *s, char c)
 {
 	char	**tab;
 	char	*str;
@@ -72,7 +72,8 @@ char	**ft_strsplit(char const *s, char c)
 	while (str[i])
 	{
 		str = ft_trim_c(str, c);
-		tab[j] = (char*)ft_memalloc(sizeof(char) * (count_char(str + i, c) + 1));
+		tab[j] = (char*)ft_memalloc(sizeof(char) *
+			(count_char(str + i, c) + 1));
 		while (str[i] && str[i] == c)
 			i++;
 		if (count_char(str + i, c) > 0)

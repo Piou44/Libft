@@ -6,7 +6,7 @@
 /*   By: fhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/03 10:29:54 by fhuang            #+#    #+#             */
-/*   Updated: 2015/12/03 11:56:15 by fhuang           ###   ########.fr       */
+/*   Updated: 2015/12/04 11:32:17 by fhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	{
 		fresh_link->content_size = content_size;
 		fresh_link->content = (void*)content;
-	}	
+	}
 	fresh_link->next = NULL;
 	free(fresh_link);
 	return (fresh_link);

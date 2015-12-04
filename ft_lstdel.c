@@ -6,7 +6,7 @@
 /*   By: fhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/03 10:30:05 by fhuang            #+#    #+#             */
-/*   Updated: 2015/12/03 16:22:01 by fhuang           ###   ########.fr       */
+/*   Updated: 2015/12/04 11:38:42 by fhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 	t_list	*del_link;
 	t_list	*ptr;
 
-//	ptr = (t_list*)ft_memalloc(sizeof(t_list));
-//	del_link = (t_list*)ft_memalloc(sizeof(t_list));
 	del_link = *alst;
 	ptr = *alst;
 	content_size = (*alst)->content_size;
@@ -33,18 +31,4 @@ void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 	del(ptr, content_size);
 	free(ptr);
 	*alst = NULL;
-}	
-
-//	REC
-///  
-/*	size_t	content_size;
-
-	if (*alst != NULL)
-	{
-		content_size = (*alst)->content_size;
-		ft_lstdel(&((*alst)->next), del);
-		del((*alst), content_size);
-		free(*alst);
-		*alst = NULL;
-	}
-}*/
+}

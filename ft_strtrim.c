@@ -6,18 +6,18 @@
 /*   By: fhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 19:11:26 by fhuang            #+#    #+#             */
-/*   Updated: 2015/12/02 16:39:22 by fhuang           ###   ########.fr       */
+/*   Updated: 2015/12/04 11:30:43 by fhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_space(int c)
+static int	ft_space(int c)
 {
 	return (c == ' ' || c == '\t' || c == '\n');
 }
 
-char	*ft_strtrim(char const *s)
+char		*ft_strtrim(char const *s)
 {
 	char	*swb;
 	int		i;
