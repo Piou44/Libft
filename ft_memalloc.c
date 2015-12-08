@@ -14,10 +14,11 @@
 
 void	*ft_memalloc(size_t size)
 {
-	char	*fresh_mem;
+	void	*fresh_mem;
 
-	fresh_mem = (char*)malloc(size);
+	fresh_mem = malloc(size);
 	if (fresh_mem == NULL)
 		return (NULL);
+	ft_memset(fresh_mem, 0, size);
 	return (fresh_mem);
 }

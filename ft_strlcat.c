@@ -31,3 +31,21 @@ size_t		ft_strlcat(char *dst, const char *src, size_t size)
 		return (size + len_src);
 	return (0);
 }
+
+#include <string.h>
+#include <stdio.h>
+
+int		main()
+{
+	char	buf[] = "Nooope";
+	char	dst1[8] = "ok";
+	char	dst2[8] = "ok";
+	strlcat(dst1, buf, 4);
+	ft_strlcat(dst2, buf, 4);
+
+	printf("V : %s\n", dst1);
+	printf("V : %c\n", dst1[strlen(dst1)]);
+	printf("F : %s\n", dst2);
+	printf("F : %c\n", dst2[strlen(dst2)]);
+	return 0;
+}

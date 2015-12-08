@@ -35,13 +35,10 @@ char	*ft_strtrim(char const *s)
 	}
 	while (ft_space((int)s[end]) == 1)
 		end--;
-	swb = ft_memalloc(sizeof(char) * (end - i + 1));
+	if (!(swb = ft_memalloc(sizeof(char) * (end - i + 1))))
+		return (NULL);
 	while (i <= end)
-	{
-		swb[j] = s[i];
-		i++;
-		j++;
-	}
+		swb[j++] = s[i++];
 	swb[j] = '\0';
 	return (swb);
 }

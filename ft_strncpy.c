@@ -17,12 +17,32 @@ char	*ft_strncpy(char *dst, const char *src, size_t n)
 	size_t	i;
 
 	i = 0;
-	while (n && *src)
+	while (n && src[i])
 	{
-		*dst++ = *src++;
-		--n;
+		dst[i] = src[i];
+		i++;
+		n--;
 	}
-	while (n-- > 0)
-		*dst++ = '\0';
+	dst[i] = '\0';
+	while (n > 0)
+	{
+		dst[i++] = '\0';
+		n--;
+	}
 	return (dst);
+}
+
+#include <string.h>
+#include <stdio.h>
+int		main()
+{
+	char	buf[] = "--> nyancat <--\n\r";
+	char	dst1[30] = {[29]='a'};
+	char	dst2[30] = {[29]='a'};
+	strncpy(dst1, buf, 12);
+	ft_strncpy(dst2, buf, 12);
+	printf("CMP : %d\n", strcmp(dst1, dst2));
+	printf("V : %s\n", dst1);
+	printf("F : %s\n", dst2);
+	return 0;
 }

@@ -16,7 +16,8 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 {
 	t_list	*fresh_link;
 
-	fresh_link = (t_list*)ft_memalloc(sizeof(t_list));
+	if (!(fresh_link = (t_list*)malloc(sizeof(t_list))))
+		return (NULL);
 	if (content == NULL)
 	{
 		fresh_link->content = NULL;

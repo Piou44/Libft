@@ -68,7 +68,8 @@ char	**ft_strsplit(char const *s, char c)
 	i = 0;
 	j = 0;
 	str = (char*)s;
-	tab = (char**)ft_memalloc(sizeof(char*) * (count_str(str, c) + 1));
+	if (!(tab = (char**)ft_memalloc(sizeof(char*) * (count_str(str, c) + 1))))
+		return (NULL);
 	while (str[i])
 	{
 		str = ft_trim_c(str, c);

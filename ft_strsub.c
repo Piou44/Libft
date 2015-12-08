@@ -17,7 +17,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	char	*troncon;
 	size_t	j;
 
-	troncon = (char*)malloc(sizeof(char*) * (len + 1));
+	troncon = (char*)malloc(sizeof(char) * (len + 1));
 	if (troncon == NULL)
 		return (NULL);
 	j = 0;
