@@ -17,12 +17,12 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	char		*fresh_s;
 	int			i;
 
-	if (!(fresh_s = (char*)malloc((sizeof(char) * (ft_strlen(s) + 1)))))
+	if (!(fresh_s = (char*)malloc(sizeof(char) * (ft_strlen(s) + 1))))
 		return (NULL);
 	i = 0;
 	while (s[i])
 	{
-		fresh_s[i] = (f(s[i]);
+		fresh_s[i] = f(s[i]);
 		i++;
 	}
 	fresh_s[i] = '\0';
