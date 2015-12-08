@@ -31,7 +31,7 @@ char	*ft_strncpy(char *dst, const char *src, size_t n)
 	}
 	return (dst);
 }
-
+/*
 #include <string.h>
 #include <stdio.h>
 int		main()
@@ -45,4 +45,4 @@ int		main()
 	printf("V : %s\n", dst1);
 	printf("F : %s\n", dst2);
 	return 0;
-}
+}*/

@@ -31,7 +31,7 @@ size_t		ft_strlcat(char *dst, const char *src, size_t size)
 		return (size + len_src);
 	return (0);
 }
-
+/*
 #include <string.h>
 #include <stdio.h>
 
@@ -48,4 +48,4 @@ int		main()
 	printf("F : %s\n", dst2);
 	printf("F : %c\n", dst2[strlen(dst2)]);
 	return 0;
-}
+}*/
