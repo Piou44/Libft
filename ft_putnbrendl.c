@@ -6,13 +6,13 @@
 /*   By: fhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 11:31:57 by fhuang            #+#    #+#             */
-/*   Updated: 2015/12/04 11:31:58 by fhuang           ###   ########.fr       */
+/*   Updated: 2015/12/09 16:27:01 by fhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendlnbr(int n)
+void	ft_putnbrendl(int n)
 {
 	ft_putnbr(n);
 	ft_putchar('\n');
