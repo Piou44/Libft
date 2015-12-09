@@ -6,7 +6,7 @@
 /*   By: fhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 21:44:48 by fhuang            #+#    #+#             */
-/*   Updated: 2015/12/09 17:47:51 by fhuang           ###   ########.fr       */
+/*   Updated: 2015/12/09 19:09:16 by fhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		ft_dynam_append(t_dynam *dynam, void *new_data, size_t nb_data)
 	void	*tmp;
 
 	mult = 1;
-	while (nb_newdata + dynam->nb_elem > mult * dynam->max_elem)
+	while (nb_data + dynam->nb_elem > mult * dynam->max_elem)
 		mult *= 2;
 	if (mult > 1)
 	{
@@ -30,7 +30,7 @@ int		ft_dynam_append(t_dynam *dynam, void *new_data, size_t nb_data)
 		dynam->data = tmp;
 	}
 	ft_memcpy(dynam->data + dynam->nb_elem * dynam->type_size,
-	new_data, nb_newdata * dynam->type_size);
-	dynam->nb_elem += nb_newdata;
+	new_data, nb_data * dynam->type_size);
+	dynam->nb_elem += nb_data;
 	return (0);
 }
