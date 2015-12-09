@@ -6,7 +6,7 @@
 /*   By: fhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 19:11:26 by fhuang            #+#    #+#             */
-/*   Updated: 2015/12/04 11:30:43 by fhuang           ###   ########.fr       */
+/*   Updated: 2015/12/09 15:57:46 by fhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,10 @@ char		*ft_strtrim(char const *s)
 	}
 	while (ft_space((int)s[end]) == 1)
 		end--;
-	swb = ft_memalloc(sizeof(char) * (end - i + 1));
+	if (!(swb = (char*)malloc(sizeof(char) * (end - i + 2))))
+		return (NULL);
 	while (i <= end)
-	{
-		swb[j] = s[i];
-		i++;
-		j++;
-	}
+		swb[j++] = s[i++];
 	swb[j] = '\0';
 	return (swb);
 }

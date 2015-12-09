@@ -6,7 +6,7 @@
 /*   By: fhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 19:20:03 by fhuang            #+#    #+#             */
-/*   Updated: 2015/12/04 11:31:49 by fhuang           ###   ########.fr       */
+/*   Updated: 2015/12/09 16:11:48 by fhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int	count_str(char *s, char c)
 	return (n);
 }
 
-static int	count_char(char *s, char c)
+static int	count_c(char *s, char c)
 {
 	int		i;
 	int		n;
@@ -68,21 +68,20 @@ char		**ft_strsplit(char const *s, char c)
 	i = 0;
 	j = 0;
 	str = (char*)s;
-	tab = (char**)ft_memalloc(sizeof(char*) * (count_str(str, c) + 1));
-	while (str[i])
+	if (!(tab = (char**)ft_memalloc(sizeof(char*) * (count_str(str, c) + 1))))
+		return (NULL);
+	while (str[i] || (tab[j] = NULL))
 	{
 		str = ft_trim_c(str, c);
-		tab[j] = (char*)ft_memalloc(sizeof(char) *
-			(count_char(str + i, c) + 1));
+		tab[j] = (char*)ft_memalloc(sizeof(char) * (count_c(str + i, c) + 1));
 		while (str[i] && str[i] == c)
 			i++;
-		if (count_char(str + i, c) > 0)
+		if (count_c(str + i, c) > 0)
 		{
-			ft_strncpy(tab[j++], (str + i), count_char(str + i, c));
+			ft_strncpy(tab[j++], (str + i), count_c(str + i, c));
 			while (str[i] && str[i] != c)
 				i++;
 		}
 	}
-	tab[j] = NULL;
 	return (tab);
 }

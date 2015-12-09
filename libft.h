@@ -6,7 +6,7 @@
 /*   By: fhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 11:48:08 by fhuang            #+#    #+#             */
-/*   Updated: 2015/12/04 12:48:54 by fhuang           ###   ########.fr       */
+/*   Updated: 2015/12/09 16:13:42 by fhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,16 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+
+# define SIZE_DYNAM 32
+
+typedef struct	s_dynam
+{
+	void	*data;
+	size_t	type_size;
+	size_t	max_elem;
+	size_t	nb_elem;
+}				t_dynam;
 
 typedef struct	s_list
 {

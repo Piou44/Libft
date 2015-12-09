@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_dynam_trim.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 17:54:45 by fhuang            #+#    #+#             */
-/*   Updated: 2015/11/30 11:40:55 by fhuang           ###   ########.fr       */
+/*   Created: 2015/12/04 22:14:45 by fhuang            #+#    #+#             */
+/*   Updated: 2015/12/09 16:16:00 by fhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+int		ft_dynam_trim(t_dynam *dynam)
 {
-	char	*troncon;
-	size_t	j;
+	void	*tmp;
 
-	troncon = (char*)malloc(sizeof(char) * (len + 1));
-	if (troncon == NULL)
-		return (NULL);
-	j = 0;
-	while (j < len)
+	if (dynam->max_elem > dynam->nb_elem)
 	{
-		troncon[j] = s[start + j];
-		j++;
+		if (!(tmp = malloc(dynam->type_size * dynam->nb_elem)))
+			return (1);
+		ft_memcpy(tmp, dynam->data, dynam->nb_elem * dynam->type_size);
+		free(dynam->data);
+		dynam->data = tmp;
+		dynam->max_elem = dynam->nb_elem;
 	}
-	troncon[j] = '\0';
-	return (troncon);
+	return (0);
 }
