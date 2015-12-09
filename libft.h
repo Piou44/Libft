@@ -6,7 +6,7 @@
 /*   By: fhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 11:48:08 by fhuang            #+#    #+#             */
-/*   Updated: 2015/12/09 16:13:42 by fhuang           ###   ########.fr       */
+/*   Updated: 2015/12/09 17:48:01 by fhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,10 @@ typedef struct	s_list
 	struct s_list	*next;
 }				t_list;
 
+t_dynam			*ft_dynam_new(size_t type_size);
+int				ft_dynam_append(t_dynam *dynam, void *new_data, size_t nb_data);
+int				ft_dynam_trim(t_dynam *dynam);
+void			ft_dynam_destroy(t_dynam **dynam);
 t_list			*ft_lstnew(void const *content, size_t content_size);
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int				ft_lstlen(t_list *list);

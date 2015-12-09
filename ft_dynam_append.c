@@ -6,13 +6,13 @@
 /*   By: fhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 21:44:48 by fhuang            #+#    #+#             */
-/*   Updated: 2015/12/09 16:18:21 by fhuang           ###   ########.fr       */
+/*   Updated: 2015/12/09 17:47:51 by fhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_dynam_append(t_dynam *dynam, void *new_data, size_t nb_newdata)
+int		ft_dynam_append(t_dynam *dynam, void *new_data, size_t nb_data)
 {
 	size_t	mult;
 	void	*tmp;
