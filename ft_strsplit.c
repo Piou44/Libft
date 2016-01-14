@@ -16,11 +16,9 @@ static int	count_str(char *s, char c)
 {
 	int		i;
 	int		n;
-	int		len;
 
 	i = 0;
 	n = 0;
-	len = ft_strlen(s);
 	while (s[i])
 	{
 		if (s[i] == c)
