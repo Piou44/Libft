@@ -6,7 +6,7 @@
 #    By: fhuang <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/27 16:52:41 by fhuang            #+#    #+#              #
-#    Updated: 2015/12/11 13:31:18 by fhuang           ###   ########.fr        #
+#    Updated: 2016/01/15 10:40:06 by fhuang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ SRC = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c ft_memchr.c \
 	  ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c  ft_strsplit.c ft_lstnew.c \
 	  ft_lstdelone.c  ft_lstdel.c ft_lstadd.c ft_lstaddend.c ft_lstlen.c \
 	  ft_lstiter.c ft_lstmap.c ft_dynam_append.c ft_dynam_destroy.c \
-	  ft_dynam_new.c ft_dynam_trim.c ft_strndup.c
+	  ft_dynam_new.c ft_dynam_trim.c ft_strndup.c get_next_line.c \
 
 OBJ = $(SRC:%.c=%.o)
 
