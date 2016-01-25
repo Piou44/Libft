@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_tabatoi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fhuang <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: fhuang <fhuang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 17:56:38 by fhuang            #+#    #+#             */
-/*   Updated: 2016/01/19 13:04:50 by fhuang           ###   ########.fr       */
+/*   Created: 2016/01/19 15:54:42 by fhuang            #+#    #+#             */
+/*   Updated: 2016/01/22 11:52:28 by fhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlen(const char *s)
+int		*ft_tabatoi(char **tab)
 {
 	int		i;
+	int		atoi;
+	int		*ret;
 
 	i = 0;
-	while (s[i] != '\0')
+	if (!(ret = (int*)ft_memalloc(sizeof(int*))))
+		return (NULL);
+	while (tab[i])
+	{
+		atoi = ft_atoi(tab[i]);
+		ret[i] = atoi;
 		i++;
-	return (i);
+	}
+	return (ret);
 }
