@@ -6,7 +6,7 @@
 #    By: fhuang <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/27 16:52:41 by fhuang            #+#    #+#              #
-#    Updated: 2016/01/25 14:39:40 by fhuang           ###   ########.fr        #
+#    Updated: 2016/02/08 15:48:02 by fhuang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,7 @@ SRC = ft_memset.c	\
 	  ft_toupper.c	\
 	  ft_tolower.c	\
 	  ft_memalloc.c	\
+	  ft_realloc.c	\
 	  ft_memdel.c	\
 	  ft_strnew.c	\
 	  ft_strdel.c	\

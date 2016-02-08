@@ -6,7 +6,7 @@
 /*   By: fhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 14:29:06 by fhuang            #+#    #+#             */
-/*   Updated: 2015/11/27 15:25:34 by fhuang           ###   ########.fr       */
+/*   Updated: 2016/02/08 15:42:39 by fhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 		dst_char[i] = src_char[i];
 		i++;
 	}
-	return (dst_char);
+	return ((void*)dst_char);
 }

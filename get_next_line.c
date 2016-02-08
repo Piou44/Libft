@@ -6,11 +6,11 @@
 /*   By: fhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 16:15:35 by fhuang            #+#    #+#             */
-/*   Updated: 2016/01/22 11:44:11 by fhuang           ###   ########.fr       */
+/*   Updated: 2016/02/08 18:09:46 by fhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 t_list	*get_fd(t_list **lst, int const fd)
 {
