@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fhuang <marvin@42.fr>                      +#+  +:+       +#+         #
+#    By: fhuang <fhuang@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/27 16:52:41 by fhuang            #+#    #+#              #
-#    Updated: 2016/02/08 15:48:02 by fhuang           ###   ########.fr        #
+#    Updated: 2016/05/18 17:31:21 by fhuang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,13 +68,16 @@ SRC = ft_memset.c	\
 	  ft_itoa.c		\
 	  ft_putchar.c	\
 	  ft_putstr.c	\
+	  ft_putstrcol.c\
 	  ft_putendl.c	\
+	  ft_putendlcol.c\
 	  ft_putnbrendl.c\
 	  ft_putnbr.c	\
 	  ft_putchar_fd.c\
 	  ft_putstr_fd.c\
 	  ft_putendl_fd.c\
 	  ft_putnbr_fd.c\
+	  ft_nbrlen.c	\
 	  ft_strsplit.c	\
 	  ft_lstnew.c	\
 	  ft_lstdelone.c\
@@ -90,24 +93,31 @@ SRC = ft_memset.c	\
 	  ft_dynam_trim.c\
 	  get_next_line.c\
 
-OBJ = $(SRC:%.c=%.o)
-
-HEADER_PATH = -I ./includes/
-
 CFLAGS = -c -Wall -Wextra -Werror
 
-all: $(NAME)
+OBJ = $(addprefix $(OBJ_PATH), $(SRC:%.c=%.o))
 
-$(NAME):
-	@echo "\033[32mCompiling..."
-	@$(CC) $(CFLAGS) $(HEADER_PATH) $(SRC)
+OBJ_PATH = ./OBJ/
+
+.PHONY: clean fclean re all
+
+all : $(NAME)
+
+$(NAME): $(OBJ)
+	@echo "----------------------------LIBFT----------------------------"
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
 
+$(OBJ_PATH)%.o : %.c
+	@echo "\033[32m" "Compiling $< into $@" "\033[0m"
+	@mkdir -p $(OBJ_PATH)
+	@$(CC) $(CFLAGS) -c $< -o $@
+
 clean:
-	@rm -f $(OBJ)
+	@rm -rf $(OBJ_PATH)
+	@rm -rf $(OBJ)
 
 fclean: clean
-	@rm -f $(NAME)
+	@rm -rf $(NAME)
 
 re: fclean all

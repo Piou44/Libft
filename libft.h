@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fhuang <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: fhuang <fhuang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 11:48:08 by fhuang            #+#    #+#             */
-/*   Updated: 2016/02/08 18:09:15 by fhuang           ###   ########.fr       */
+/*   Updated: 2016/05/18 17:29:51 by fhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,14 @@
 
 # define SIZE_DYNAM 16
 # define BUFF_SIZE 2056
+# define ABS(x) x = x < 0 ? -x : x
+# define RED "\x1b[31m"
+# define GREEN "\x1b[32m"
+# define YELLOW "\x1b[33m"
+# define BLUE "\x1b[34m"
+# define MAGENTA "\x1b[35m"
+# define CYAN "\x1b[36m"
+# define COLOR_RESET "\x1b[0m"
 
 /*
 **	GNL.H
@@ -30,6 +38,8 @@ typedef struct	s_gnl
 	char	*lfo;
 }				t_gnl;
 
+int				get_next_line(int const fd, char **line);
+
 /*
 **	DYNAM.H
 */
@@ -37,7 +47,7 @@ typedef struct	s_gnl
 typedef struct	s_dynam
 {
 	void	*data;
-	size_t	type_size;
+	size_t	t_size;
 	size_t	max_elem;
 	size_t	nb_elem;
 }				t_dynam;
@@ -73,9 +83,11 @@ void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 
 void			ft_putchar(char c);
 void			ft_putstr(char const *s);
+void			ft_putstrcol(char const *s, char *color);
 void			ft_putendl(char const *s);
+void			ft_putendlcol(char const *s, char *color);
 void			ft_putnbrendl(int n);
-void			ft_putnbr(int n);
+void			ft_putnbr(long long int n);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char const *s, int fd);
 void			ft_putendl_fd(char const *s, int fd);
@@ -141,6 +153,7 @@ int				*ft_tabatoi(char **tab);
 */
 
 char			*ft_itoa(int n);
+size_t			ft_nbrlen(int n);
 unsigned int	ft_power_pos(unsigned int n, unsigned int p);
 
 /*

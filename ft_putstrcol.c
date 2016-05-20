@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putstrcol.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fhuang <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: fhuang <fhuang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 17:23:31 by fhuang            #+#    #+#             */
-/*   Updated: 2015/12/01 21:27:36 by fhuang           ###   ########.fr       */
+/*   Created: 2016/05/18 17:27:21 by fhuang            #+#    #+#             */
+/*   Updated: 2016/05/18 17:33:40 by fhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(long long int n)
+void	ft_putstrcol(char const *s, char *color)
 {
-	unsigned long long int	uin;
-
-	if (n < 0)
-	{
-		ft_putchar('-');
-		uin = (unsigned long long int)-n;
-	}
-	else
-		uin = (unsigned long long int)n;
-	if (uin >= 10)
-		ft_putnbr(uin / 10);
-	ft_putchar(uin % 10 + '0');
+	write(1, color, ft_strlen(color));
+	write(1, s, ft_strlen(s));
+	write(1, COLOR_RESET, ft_strlen(COLOR_RESET));
 }
